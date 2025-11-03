@@ -4,15 +4,22 @@
 //|   Export historical data for multiple symbols since 2008        |
 //+------------------------------------------------------------------+
 #property copyright "Historical Data Exporter"
-#property version   "1.00"
+#property version   "2.00"
 #property script_show_inputs
 
 //--- Input parameters
 input datetime StartDate = D'2008.01.01 00:00:00';  // Date de début
 input datetime EndDate = 0;                          // Date de fin (0 = aujourd'hui)
-input ENUM_TIMEFRAMES Timeframe = PERIOD_D1;        // Timeframe
 input string OutputFolder = "HistoricalData";        // Dossier de sortie
-input bool AddLocalTime = false;                     // Ajouter heure locale
+
+//--- List of timeframes to export
+ENUM_TIMEFRAMES Timeframes[] = {
+   PERIOD_D1,    // Daily
+   PERIOD_H4,    // 4 Hours
+   PERIOD_H1,    // 1 Hour
+   PERIOD_M15,   // 15 Minutes
+   PERIOD_M5     // 5 Minutes
+};
 
 //--- List of symbols to export
 string Symbols[] = {
@@ -43,9 +50,11 @@ void OnStart()
 
    datetime endDate = (EndDate == 0) ? TimeCurrent() : EndDate;
    Print("End Date: ", TimeToString(endDate, TIME_DATE));
-   Print("Timeframe: ", EnumToString(Timeframe));
+   Print("Timeframes: D1, H4, H1, M15, M5");
    Print("Output Folder: MQL5/Files/", OutputFolder);
    Print("Number of symbols: ", ArraySize(Symbols));
+   Print("Number of timeframes: ", ArraySize(Timeframes));
+   Print("Total exports: ", ArraySize(Symbols) * ArraySize(Timeframes));
    Print("========================================\n");
 
    // Create output folder
@@ -56,24 +65,39 @@ void OnStart()
    }
 
    int totalSymbols = ArraySize(Symbols);
+   int totalTimeframes = ArraySize(Timeframes);
    int successCount = 0;
    int failedCount = 0;
+   int totalOperations = totalSymbols * totalTimeframes;
+   int currentOperation = 0;
 
    // Process each symbol
    for(int i = 0; i < totalSymbols; i++)
    {
       string symbol = Symbols[i];
-      Print("\n[", (i+1), "/", totalSymbols, "] Processing ", symbol, "...");
+      Print("\n═══════════════════════════════════════");
+      Print("Symbol [", (i+1), "/", totalSymbols, "]: ", symbol);
+      Print("═══════════════════════════════════════");
 
-      if(ExportSymbolData(symbol, StartDate, endDate, Timeframe, OutputFolder))
+      // Process each timeframe for this symbol
+      for(int t = 0; t < totalTimeframes; t++)
       {
-         successCount++;
-         Print("✓ ", symbol, " exported successfully!");
-      }
-      else
-      {
-         failedCount++;
-         Print("✗ ", symbol, " export FAILED!");
+         currentOperation++;
+         ENUM_TIMEFRAMES tf = Timeframes[t];
+         string tfName = GetTimeframeName(tf);
+
+         Print("\n  [", currentOperation, "/", totalOperations, "] ", symbol, " - ", tfName, " ...");
+
+         if(ExportSymbolData(symbol, StartDate, endDate, tf, OutputFolder))
+         {
+            successCount++;
+            Print("  ✓ ", symbol, " (", tfName, ") exported successfully!");
+         }
+         else
+         {
+            failedCount++;
+            Print("  ✗ ", symbol, " (", tfName, ") export FAILED!");
+         }
       }
    }
 
@@ -81,9 +105,10 @@ void OnStart()
    Print("\n========================================");
    Print("EXPORT SUMMARY");
    Print("========================================");
-   Print("Total symbols: ", totalSymbols);
+   Print("Total operations: ", totalOperations);
    Print("Successfully exported: ", successCount);
    Print("Failed: ", failedCount);
+   Print("Success rate: ", DoubleToString((double)successCount/totalOperations*100, 1), "%");
    Print("========================================");
 
    if(successCount > 0)
@@ -121,10 +146,11 @@ bool ExportSymbolData(string symbol, datetime startDate, datetime endDate,
 
    Print("  → ", copied, " bars loaded");
 
-   // Create filename with current date
+   // Create filename with timeframe and current date
+   string tfName = GetTimeframeName(timeframe);
    string currentDate = TimeToString(TimeCurrent(), TIME_DATE);
    StringReplace(currentDate, ".", "");
-   string filename = folder + "/" + symbol + "_Historical_2008_" + currentDate + ".csv";
+   string filename = folder + "/" + symbol + "_" + tfName + "_Historical_2008_" + currentDate + ".csv";
 
    // Open file for writing
    int fileHandle = FileOpen(filename, FILE_WRITE|FILE_CSV|FILE_ANSI, ";");
@@ -174,6 +200,26 @@ bool ExportSymbolData(string symbol, datetime startDate, datetime endDate,
    Print("  → Total bars written: ", copied);
 
    return true;
+}
+
+//+------------------------------------------------------------------+
+//| Get short name for timeframe                                     |
+//+------------------------------------------------------------------+
+string GetTimeframeName(ENUM_TIMEFRAMES tf)
+{
+   switch(tf)
+   {
+      case PERIOD_M1:  return "M1";
+      case PERIOD_M5:  return "M5";
+      case PERIOD_M15: return "M15";
+      case PERIOD_M30: return "M30";
+      case PERIOD_H1:  return "H1";
+      case PERIOD_H4:  return "H4";
+      case PERIOD_D1:  return "D1";
+      case PERIOD_W1:  return "W1";
+      case PERIOD_MN1: return "MN1";
+      default:         return "UNKNOWN";
+   }
 }
 
 //+------------------------------------------------------------------+
