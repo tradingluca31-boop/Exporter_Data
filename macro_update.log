@@ -1,0 +1,118 @@
+2025-11-03 10:29:24,958 - INFO - Total indicators to track: 88
+2025-11-03 10:29:24,959 - INFO - ÉTAPE 1/3: Récupération des données...
+2025-11-03 10:29:24,959 - INFO - ================================================================================
+2025-11-03 10:29:24,959 - INFO - DÉMARRAGE RÉCUPÉRATION DONNÉES MACROÉCONOMIQUES US
+2025-11-03 10:29:24,959 - INFO - ================================================================================
+2025-11-03 10:29:24,959 - INFO - Tentative avec 'investiny'...
+2025-11-03 10:29:25,568 - ERROR - Erreur avec investiny: module 'investiny' has no attribute 'economic_calendar'
+2025-11-03 10:29:25,569 - INFO - Tentative avec 'investpy' (fallback)...
+2025-11-03 10:29:25,569 - WARNING - investpy non installé. Installation...
+2025-11-03 10:32:58,926 - INFO - 
+ÉTAPE 2/3: Traitement des données...
+2025-11-03 10:32:58,926 - INFO - ================================================================================
+2025-11-03 10:32:58,926 - INFO - TRAITEMENT DES DONNÉES
+2025-11-03 10:32:58,926 - INFO - ================================================================================
+2025-11-03 10:32:58,926 - INFO - Filtrage des 88 indicateurs...
+2025-11-03 10:32:59,505 - INFO -   Avant filtrage: 43071 événements
+2025-11-03 10:32:59,505 - INFO -   Après filtrage: 7463 événements
+2025-11-03 10:32:59,506 - INFO -   Réduction: 82.7%
+2025-11-03 10:32:59,506 - INFO - Nettoyage des valeurs numériques...
+2025-11-03 10:32:59,527 - INFO - Calcul des surprises économiques...
+2025-11-03 10:32:59,635 - WARNING - Impossible de parser les dates
+2025-11-03 10:32:59,636 - INFO - ================================================================================
+2025-11-03 10:32:59,636 - INFO - STATISTIQUES FINALES
+2025-11-03 10:32:59,636 - INFO - ================================================================================
+2025-11-03 10:32:59,636 - INFO - Nombre total d'événements: 7463
+2025-11-03 10:32:59,636 - ERROR - 
+================================================================================
+2025-11-03 10:32:59,640 - ERROR - ================================================================================
+2025-11-03 10:32:59,640 - ERROR - 'datetime'
+2025-11-03 10:32:59,640 - ERROR - ================================================================================
+
+2025-11-03 10:52:12,399 - INFO - Total indicators to track: 88
+2025-11-03 10:52:12,399 - INFO - ÉTAPE 1/3: Récupération des données...
+2025-11-03 10:52:12,399 - INFO - ================================================================================
+2025-11-03 10:52:12,399 - INFO - DÉMARRAGE RÉCUPÉRATION DONNÉES MACROÉCONOMIQUES US
+2025-11-03 10:52:12,400 - INFO - ================================================================================
+2025-11-03 10:52:12,400 - INFO - Tentative avec 'investiny'...
+2025-11-03 10:52:12,552 - ERROR - Erreur avec investiny: module 'investiny' has no attribute 'economic_calendar'
+2025-11-03 10:52:12,552 - INFO - Tentative avec 'investpy' (fallback)...
+2025-11-03 10:56:47,281 - INFO - 
+ÉTAPE 2/3: Traitement des données...
+2025-11-03 10:56:47,281 - INFO - ================================================================================
+2025-11-03 10:56:47,281 - INFO - TRAITEMENT DES DONNÉES
+2025-11-03 10:56:47,281 - INFO - ================================================================================
+2025-11-03 10:56:47,281 - INFO - Filtrage des 88 indicateurs...
+2025-11-03 10:56:47,885 - INFO -   Avant filtrage: 43071 événements
+2025-11-03 10:56:47,885 - INFO -   Après filtrage: 7463 événements
+2025-11-03 10:56:47,885 - INFO -   Réduction: 82.7%
+2025-11-03 10:56:47,886 - INFO - Nettoyage des valeurs numériques...
+2025-11-03 10:56:47,904 - INFO - Calcul des surprises économiques...
+2025-11-03 10:56:48,011 - WARNING - Impossible de parser les dates
+2025-11-03 10:56:48,012 - INFO - ================================================================================
+2025-11-03 10:56:48,012 - INFO - STATISTIQUES FINALES
+2025-11-03 10:56:48,012 - INFO - ================================================================================
+2025-11-03 10:56:48,012 - INFO - Nombre total d'événements: 7463
+2025-11-03 10:56:48,012 - ERROR - 
+================================================================================
+2025-11-03 10:56:48,017 - ERROR - ================================================================================
+2025-11-03 10:56:48,017 - ERROR - 'datetime'
+2025-11-03 10:56:48,017 - ERROR - ================================================================================
+
+2025-11-03 10:57:46,811 - INFO - Total indicators to track: 88
+2025-11-03 10:57:46,811 - INFO - ÉTAPE 1/3: Récupération des données...
+2025-11-03 10:57:46,811 - INFO - ================================================================================
+2025-11-03 10:57:46,811 - INFO - DÉMARRAGE RÉCUPÉRATION DONNÉES MACROÉCONOMIQUES US
+2025-11-03 10:57:46,811 - INFO - ================================================================================
+2025-11-03 10:57:46,812 - INFO - Tentative avec 'investiny'...
+2025-11-03 10:57:46,961 - ERROR - Erreur avec investiny: module 'investiny' has no attribute 'economic_calendar'
+2025-11-03 10:57:46,961 - INFO - Tentative avec 'investpy' (fallback)...
+2025-11-03 11:00:41,673 - INFO - 
+ÉTAPE 2/3: Traitement des données...
+2025-11-03 11:00:41,674 - INFO - ================================================================================
+2025-11-03 11:00:41,674 - INFO - TRAITEMENT DES DONNÉES
+2025-11-03 11:00:41,674 - INFO - ================================================================================
+2025-11-03 11:00:41,674 - INFO - Filtrage des 88 indicateurs...
+2025-11-03 11:00:42,258 - INFO -   Avant filtrage: 43071 événements
+2025-11-03 11:00:42,259 - INFO -   Après filtrage: 7463 événements
+2025-11-03 11:00:42,259 - INFO -   Réduction: 82.7%
+2025-11-03 11:00:42,259 - INFO - Nettoyage des valeurs numériques...
+2025-11-03 11:00:42,277 - INFO - Calcul des surprises économiques...
+2025-11-03 11:00:42,384 - INFO - Dates parsées avec succès
+2025-11-03 11:00:42,387 - INFO - ================================================================================
+2025-11-03 11:00:42,387 - INFO - STATISTIQUES FINALES
+2025-11-03 11:00:42,388 - INFO - ================================================================================
+2025-11-03 11:00:42,388 - INFO - Nombre total d'evenements: 7463
+2025-11-03 11:00:42,388 - INFO - Periode couverte: 2008-01-01 00:00:00 a 2025-11-03 00:00:00
+2025-11-03 11:00:42,389 - INFO - Evenements uniques: 367
+2025-11-03 11:00:42,390 - INFO - Taux de surprise disponible: 83.9%
+2025-11-03 11:00:42,390 - INFO - 
+Top 10 événements les plus fréquents:
+2025-11-03 11:00:42,391 - INFO -   Initial Jobless Claims: 919 occurrences
+2025-11-03 11:00:42,392 - INFO -   Michigan Consumer Sentiment: 154 occurrences
+2025-11-03 11:00:42,392 - INFO -   Building Permits: 86 occurrences
+2025-11-03 11:00:42,392 - INFO -   Trade Balance: 80 occurrences
+2025-11-03 11:00:42,392 - INFO -   Existing Home Sales: 80 occurrences
+2025-11-03 11:00:42,392 - INFO -   ISM Manufacturing PMI: 79 occurrences
+2025-11-03 11:00:42,392 - INFO -   Chicago PMI: 79 occurrences
+2025-11-03 11:00:42,392 - INFO -   New Home Sales: 79 occurrences
+2025-11-03 11:00:42,392 - INFO -   ISM Non-Manufacturing PMI: 79 occurrences
+2025-11-03 11:00:42,392 - INFO -   ISM Manufacturing Prices: 79 occurrences
+2025-11-03 11:00:42,392 - INFO - 
+ÉTAPE 3/3: Sauvegarde...
+2025-11-03 11:00:42,393 - INFO - ================================================================================
+2025-11-03 11:00:42,393 - INFO - SAUVEGARDE DES DONNÉES
+2025-11-03 11:00:42,393 - INFO - ================================================================================
+2025-11-03 11:00:42,441 - INFO -   Lignes: 7463
+2025-11-03 11:00:42,441 - INFO -   Colonnes: 14
+2025-11-03 11:00:42,449 - INFO -   Taille: 2.52 MB
+2025-11-03 11:00:42,449 - INFO - 
+Aperçu des surprises:
+2025-11-03 11:00:42,450 - INFO -   Surprises positives: 3009
+2025-11-03 11:00:42,450 - INFO -   Surprises négatives: 3051
+2025-11-03 11:00:42,450 - INFO -   Surprises nulles/NaN: 1403
+2025-11-03 11:00:42,451 - INFO - 
+  Surprise moyenne: -8.10%
+2025-11-03 11:00:42,451 - INFO -   Surprise médiane: 0.00%
+2025-11-03 11:00:42,451 - INFO -   Surprise max (positive): 10500.00%
+2025-11-03 11:00:42,452 - INFO -   Surprise max (négative): -6700.00%
